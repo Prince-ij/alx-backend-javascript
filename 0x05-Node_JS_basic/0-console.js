@@ -7,7 +7,7 @@
  */
 
 function displayMessage(message) {
-	console.log(message);
+  console.log(message);
 }
 
 
