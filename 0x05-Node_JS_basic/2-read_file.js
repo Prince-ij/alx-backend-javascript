@@ -14,7 +14,7 @@ function countStudents(path) {
       }, {});
     });
 
-    console.log(`Number of students: ${students.length}`); 
+    console.log(`Number of students: ${students.length}`);
     const fields = students.reduce((acc, student) => {
       const { field, firstname } = student;
       if (!acc[field]) {
