@@ -8,20 +8,20 @@ function countStudents(path) {
     const headers = lines.shift().split(',');
     const students = lines.map((line) => {
       const values = line.split(',');
-      return headers.reduce((student, header, index) => {
-        student[header] = values[index];
-        return student;
+      return headers.reduce((acc, header, index) => {
+        acc[header] = values[index];
+        return acc;
       }, {});
     });
 
     console.log(`Number of students: ${students.length}`);
     
     const fields = students.reduce((acc, student) => {
-      const field = student.field;
+      const { field, firstname } = student;
       if (!acc[field]) {
         acc[field] = [];
       }
-      acc[field].push(student.firstname);
+      acc[field].push(firstname);
       return acc;
     }, {});
 
